@@ -1,0 +1,12 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7.26
+    volumes:
+      - "./data/:/docker-entrypoint-initdb.d/:rw"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1
+      - MYSQL_DATABASE=orders
+      - TZ="Asia/Shanghai"
+    ports:
+      - 33061:3306
